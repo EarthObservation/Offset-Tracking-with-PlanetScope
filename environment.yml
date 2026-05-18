@@ -1,0 +1,33 @@
+name: planeteo_wsl
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.12
+  - ipykernel
+  - numpy
+  - pandas
+  - matplotlib
+  - rasterio
+  - geopandas
+  - pyproj
+  - shapely
+  - pyogrio
+  - folium
+  - contextily
+  - geopy
+  - boto3
+  - requests
+  - scikit-learn
+  - scipy
+  - numba
+  - tifffile
+  - h5py
+  - tqdm
+  - seaborn
+  - sentinelhub
+  - gdal
+  - opencv
+  - scikit-image
+  - statsmodels
