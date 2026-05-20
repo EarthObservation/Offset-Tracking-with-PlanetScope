@@ -27,18 +27,33 @@ Clone this repository:
 git clone https://github.com/EarthObservation/Offset-Tracking-with-PlanetScope-Data.git
 ```
 
-Clone the required helper repository:
-
-```bash
-git clone https://github.com/arimue/PlanetScope_landslide_tracking.git
-```
-
 Create the environment:
 
 ```bash
 conda env create -f environment.yml
 conda activate YOUR_ENV_NAME
 ```
+
+Set your Planet API key:
+
+1. Sign in to your Planet account.
+2. Open **Account** -> **My Settings**.
+3. Reveal and copy the value shown in the **API Key** section.
+
+Export it in your shell before running the notebook:
+
+```bash
+export PL_API_KEY="your-planet-api-key"
+```
+
+To make it persistent across new shell sessions, add it to your shell profile (`~/.bashrc` or `~/.zshrc`):
+
+```bash
+echo 'export PL_API_KEY="your-planet-api-key"' >> ~/.bashrc  # use ~/.zshrc if you use zsh
+source ~/.bashrc  # or: source ~/.zshrc
+```
+
+The notebook reads `PL_API_KEY` from the environment. If you prefer not to export it, it can also fall back to a local `planet_api_key.txt` file containing only the key, but using the environment variable is the recommended setup.
 
 ---
 
@@ -76,6 +91,8 @@ parallel_stereo --help
 This repository is intended as a research workflow for landslide monitoring using PlanetScope imagery and offset tracking techniques.
 
 The notebook's `Sledenje_odmikov_pikslov_plazovi.ipynb` comments and variable names are partially written in Slovene, as the workflow was also developed for teaching purposes.
+
+Helper modules from `PlanetScope_landslide_tracking` are vendored in `planetscope_landslide_tracking/`, so a separate helper repository clone is no longer required. The vendored helper code is distributed under its upstream MIT license in `planetscope_landslide_tracking/LICENSE`.
 
 # Citation
 
